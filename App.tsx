@@ -24,30 +24,30 @@ const injectGlobalStyles = () => {
       font-family: 'Hind Siliguri', sans-serif;
     }
     body {
-      background-color: #050B0E;
-      color: #F8FAFC;
+      background-color: #F5F3EE;
+      color: #171717;
     }
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #0A1115;
+      background: #F5F3EE;
     }
     ::-webkit-scrollbar-thumb {
-      background: #172126;
+      background: #E9E5DC;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #FFC928;
+      background: #C6A15B;
     }
     .gold-gradient-text {
-      background: linear-gradient(135deg, #FFD84D 0%, #FFC928 50%, #E8AD00 100%);
+      background: linear-gradient(135deg, #D8BC7A 0%, #C6A15B 50%, #A88643 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .gold-gradient-bg {
-      background: linear-gradient(135deg, #FFD84D 0%, #FFC928 100%);
+      background: linear-gradient(135deg, #D8BC7A 0%, #C6A15B 100%);
     }
   `;
   document.head.appendChild(style);
@@ -430,12 +430,12 @@ export default function App() {
 
   return (
     <ShopContext.Provider value={contextValue}>
-      <div className="min-h-screen bg-[#050B0E] text-[#F8FAFC] flex flex-col selection:bg-[#FFC928] selection:text-[#050B0E]">
+      <div className="min-h-screen bg-[#F5F3EE] text-[#171717] flex flex-col selection:bg-[#C6A15B] selection:text-[#0B0B0B]">
         
         {/* Toast Alert Banner */}
         {toastMessage && (
-          <div className="fixed top-20 right-4 z-50 bg-[#FFC928] text-[#050B0E] font-bold px-5 py-3 rounded-xl shadow-2xl flex items-center gap-2 animate-bounce">
-            <CheckCircle2 className="w-5 h-5 text-[#050B0E]" />
+          <div className="fixed top-20 right-4 z-50 bg-[#C6A15B] text-[#0B0B0B] font-bold px-5 py-3 rounded-xl shadow-2xl flex items-center gap-2 animate-bounce">
+            <CheckCircle2 className="w-5 h-5 text-[#0B0B0B]" />
             <span>{toastMessage}</span>
           </div>
         )}
@@ -493,26 +493,26 @@ const useShop = () => useContext(ShopContext);
 // ==========================================
 function TopAnnouncementBar() {
   return (
-    <div className="bg-[#0A1115] border-b border-[#38434A] py-2 px-4 text-xs text-[#CBD5E1]">
+    <div className="bg-[#0A1115] border-b border-[#E2DCCF] py-2 px-4 text-xs text-[#55514A]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
         <div className="flex items-center gap-6 overflow-x-auto whitespace-nowrap scrollbar-none">
-          <span className="flex items-center gap-1.5 text-[#FFC928]">
+          <span className="flex items-center gap-1.5 text-[#C6A15B]">
             <Truck className="w-3.5 h-3.5" /> সারা বাংলাদেশে ডেলিভারি
           </span>
           <span className="flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#FFC928]" /> ১০০% অরিজিনাল পণ্য
+            <ShieldCheck className="w-3.5 h-3.5 text-[#C6A15B]" /> ১০০% অরিজিনাল পণ্য
           </span>
           <span className="flex items-center gap-1.5">
-            <RefreshCw className="w-3.5 h-3.5 text-[#FFC928]" /> সহজ রিটার্ন সুবিধা
+            <RefreshCw className="w-3.5 h-3.5 text-[#C6A15B]" /> সহজ রিটার্ন সুবিধা
           </span>
           <span className="flex items-center gap-1.5">
-            <PhoneCall className="w-3.5 h-3.5 text-[#FFC928]" /> ২৪/৭ কাস্টমার সাপোর্ট
+            <PhoneCall className="w-3.5 h-3.5 text-[#C6A15B]" /> ২৪/৭ কাস্টমার সাপোর্ট
           </span>
         </div>
         <div className="hidden md:flex items-center gap-4 text-xs">
-          <span>হটলাইন: <strong className="text-[#FFC928]">+880 1700-000000</strong></span>
-          <span className="text-[#38434A]">|</span>
-          <button onClick={() => window.location.href='/track-order'} className="hover:text-[#FFC928] transition-colors">
+          <span>হটলাইন: <strong className="text-[#C6A15B]">+880 1700-000000</strong></span>
+          <span className="text-[#E2DCCF]">|</span>
+          <button onClick={() => window.location.href='/track-order'} className="hover:text-[#C6A15B] transition-colors">
             অর্ডার ট্র্যাক করুন
           </button>
         </div>
@@ -534,7 +534,7 @@ function MainHeader() {
   }, [searchQuery, products]);
 
   return (
-    <header className="sticky top-0 z-40 bg-[#050B0E]/95 backdrop-blur-md border-b border-[#38434A]/80 py-3 px-4">
+    <header className="sticky top-0 z-40 bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#E2DCCF]/80 py-3 px-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         
         {/* Brand Logo */}
@@ -542,14 +542,14 @@ function MainHeader() {
           onClick={() => navigateTo('/')}
           className="flex items-center gap-3 cursor-pointer group select-none"
         >
-          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#FFD84D] to-[#E8AD00] flex items-center justify-center shadow-lg shadow-[#FFC928]/20 group-hover:scale-105 transition-transform">
-            <ShoppingBag className="w-6 h-6 text-[#050B0E] stroke-[2.5]" />
+          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#D8BC7A] to-[#A88643] flex items-center justify-center shadow-lg shadow-[#C6A15B]/20 group-hover:scale-105 transition-transform">
+            <ShoppingBag className="w-6 h-6 text-[#0B0B0B] stroke-[2.5]" />
           </div>
           <div>
             <h1 className="text-xl md:text-2xl font-extrabold tracking-tight gold-gradient-text leading-none">
               HASIB MART
             </h1>
-            <p className="text-[10px] md:text-xs text-[#CBD5E1] font-medium tracking-wide">
+            <p className="text-[10px] md:text-xs text-[#55514A] font-medium tracking-wide">
               আপনার বিশ্বস্ত অনলাইন শপিং গন্তব্য
             </p>
           </div>
@@ -567,13 +567,13 @@ function MainHeader() {
                 setShowSearchDropdown(true);
               }}
               onFocus={() => setShowSearchDropdown(true)}
-              className="w-full bg-[#10191D] text-[#F8FAFC] placeholder-[#94A3B8] border border-[#38434A] rounded-full py-2.5 pl-5 pr-12 text-sm focus:outline-none focus:border-[#FFC928] transition-colors"
+              className="w-full bg-[#FFFFFF] text-[#F8FAFC] placeholder-[#777168] border border-[#E2DCCF] rounded-full py-2.5 pl-5 pr-12 text-sm focus:outline-none focus:border-[#C6A15B] transition-colors"
             />
             <button 
               onClick={() => {
                 if (searchQuery) navigateTo('/shop');
               }}
-              className="absolute right-1 top-1 bottom-1 px-4 bg-[#FFC928] hover:bg-[#E8AD00] text-[#050B0E] font-semibold rounded-full flex items-center justify-center transition-colors"
+              className="absolute right-1 top-1 bottom-1 px-4 bg-[#C6A15B] hover:bg-[#A88643] text-[#0B0B0B] font-semibold rounded-full flex items-center justify-center transition-colors"
             >
               <Search className="w-4 h-4" />
             </button>
@@ -581,7 +581,7 @@ function MainHeader() {
 
           {/* Search Dropdown Modal */}
           {showSearchDropdown && searchResults.length > 0 && (
-            <div className="absolute top-full mt-2 left-0 right-0 bg-[#10191D] border border-[#38434A] rounded-2xl shadow-2xl overflow-hidden z-50">
+            <div className="absolute top-full mt-2 left-0 right-0 bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl shadow-2xl overflow-hidden z-50">
               {searchResults.map((prod) => (
                 <div
                   key={prod.id}
@@ -589,14 +589,14 @@ function MainHeader() {
                     navigateTo('/product', { productId: prod.id });
                     setShowSearchDropdown(false);
                   }}
-                  className="p-3 border-b border-[#38434A]/50 hover:bg-[#172126] flex items-center gap-3 cursor-pointer transition-colors"
+                  className="p-3 border-b border-[#E2DCCF]/50 hover:bg-[#EEEAE1] flex items-center gap-3 cursor-pointer transition-colors"
                 >
                   <img src={prod.image} alt={prod.name} className="w-10 h-10 object-cover rounded-lg" />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-[#F8FAFC] truncate">{prod.name}</p>
-                    <p className="text-xs text-[#FFC928] font-bold">৳{prod.price.toLocaleString('bn-BD')}</p>
+                    <p className="text-xs text-[#C6A15B] font-bold">৳{prod.price.toLocaleString('bn-BD')}</p>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-[#94A3B8]" />
+                  <ChevronRight className="w-4 h-4 text-[#777168]" />
                 </div>
               ))}
             </div>
@@ -608,7 +608,7 @@ function MainHeader() {
           {/* Wishlist Button */}
           <button 
             onClick={() => navigateTo('/wishlist')}
-            className="p-2.5 rounded-full hover:bg-[#172126] text-[#CBD5E1] hover:text-[#FFC928] relative transition-colors"
+            className="p-2.5 rounded-full hover:bg-[#EEEAE1] text-[#55514A] hover:text-[#C6A15B] relative transition-colors"
             title="উইশলিস্ট"
           >
             <Heart className="w-5 h-5" />
@@ -622,7 +622,7 @@ function MainHeader() {
           {/* Admin / Account Quick Nav */}
           <button 
             onClick={() => navigateTo('/admin')}
-            className="p-2.5 rounded-full hover:bg-[#172126] text-[#CBD5E1] hover:text-[#FFC928] transition-colors"
+            className="p-2.5 rounded-full hover:bg-[#EEEAE1] text-[#55514A] hover:text-[#C6A15B] transition-colors"
             title="এডমিন ড্যাশবোর্ড"
           >
             <User className="w-5 h-5" />
@@ -631,17 +631,17 @@ function MainHeader() {
           {/* Cart Header Drawer Trigger */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className="bg-[#10191D] hover:bg-[#172126] border border-[#38434A] hover:border-[#FFC928] p-2 md:px-4 md:py-2 rounded-full flex items-center gap-3 transition-all"
+            className="bg-[#FFFFFF] hover:bg-[#EEEAE1] border border-[#E2DCCF] hover:border-[#C6A15B] p-2 md:px-4 md:py-2 rounded-full flex items-center gap-3 transition-all"
           >
             <div className="relative">
-              <ShoppingCart className="w-5 h-5 text-[#FFC928]" />
+              <ShoppingCart className="w-5 h-5 text-[#C6A15B]" />
               <span className="absolute -top-2 -right-2 bg-[#EF3038] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                 {cartCount}
               </span>
             </div>
             <div className="hidden lg:block text-left">
-              <p className="text-[10px] text-[#94A3B8] leading-none">আপনার কার্ট</p>
-              <p className="text-xs font-bold text-[#FFC928] leading-tight">৳{cartSubtotal.toLocaleString('bn-BD')}</p>
+              <p className="text-[10px] text-[#777168] leading-none">আপনার কার্ট</p>
+              <p className="text-xs font-bold text-[#C6A15B] leading-tight">৳{cartSubtotal.toLocaleString('bn-BD')}</p>
             </div>
           </button>
         </div>
@@ -655,14 +655,14 @@ function NavigationBar() {
   const { categories, navigateTo, currentPath, selectedCategorySlug } = useShop();
 
   return (
-    <nav className="bg-[#0A1115] border-b border-[#38434A] hidden md:block">
+    <nav className="bg-[#0A1115] border-b border-[#E2DCCF] hidden md:block">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <ul className="flex items-center gap-1 font-medium text-sm">
           <li>
             <button
               onClick={() => navigateTo('/')}
               className={`px-4 py-3 rounded-none border-b-2 transition-all ${
-                currentPath === '/' ? 'border-[#FFC928] text-[#FFC928] font-bold' : 'border-transparent text-[#CBD5E1] hover:text-[#FFC928]'
+                currentPath === '/' ? 'border-[#C6A15B] text-[#C6A15B] font-bold' : 'border-transparent text-[#55514A] hover:text-[#C6A15B]'
               }`}
             >
               হোম
@@ -673,8 +673,8 @@ function NavigationBar() {
               onClick={() => navigateTo('/shop', { category: 'all' })}
               className={`px-4 py-3 border-b-2 transition-all ${
                 currentPath === '/shop' && selectedCategorySlug === 'all'
-                  ? 'border-[#FFC928] text-[#FFC928] font-bold'
-                  : 'border-transparent text-[#CBD5E1] hover:text-[#FFC928]'
+                  ? 'border-[#C6A15B] text-[#C6A15B] font-bold'
+                  : 'border-transparent text-[#55514A] hover:text-[#C6A15B]'
               }`}
             >
               সব পণ্য
@@ -686,8 +686,8 @@ function NavigationBar() {
                 onClick={() => navigateTo('/shop', { category: cat.slug })}
                 className={`px-4 py-3 border-b-2 transition-all flex items-center gap-1.5 ${
                   selectedCategorySlug === cat.slug && currentPath === '/shop'
-                    ? 'border-[#FFC928] text-[#FFC928] font-bold'
-                    : 'border-transparent text-[#CBD5E1] hover:text-[#FFC928]'
+                    ? 'border-[#C6A15B] text-[#C6A15B] font-bold'
+                    : 'border-transparent text-[#55514A] hover:text-[#C6A15B]'
                 }`}
               >
                 <span>{cat.icon}</span>
@@ -700,7 +700,7 @@ function NavigationBar() {
         {/* Offer Tag Badge */}
         <button
           onClick={() => navigateTo('/shop')}
-          className="bg-[#172126] text-[#FFC928] border border-[#FFC928]/40 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 hover:bg-[#FFC928] hover:text-[#050B0E] transition-all"
+          className="bg-[#EEEAE1] text-[#C6A15B] border border-[#C6A15B]/40 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 hover:bg-[#C6A15B] hover:text-[#0B0B0B] transition-all"
         >
           <Sparkles className="w-3.5 h-3.5" />
           <span>বিশেষ অফার</span>
@@ -733,11 +733,11 @@ function HomePage() {
         <div className="flex justify-between items-end mb-6">
           <div>
             <h2 className="text-2xl font-extrabold gold-gradient-text">ক্যাটাগরি সমূহ</h2>
-            <p className="text-xs text-[#94A3B8]">আপনার পছন্দের পণ্য খুঁজে নিন সহজেই</p>
+            <p className="text-xs text-[#777168]">আপনার পছন্দের পণ্য খুঁজে নিন সহজেই</p>
           </div>
           <button 
             onClick={() => navigateTo('/shop')}
-            className="text-xs font-semibold text-[#FFC928] hover:underline flex items-center gap-1"
+            className="text-xs font-semibold text-[#C6A15B] hover:underline flex items-center gap-1"
           >
             সব দেখুন <ChevronRight className="w-4 h-4" />
           </button>
@@ -748,15 +748,15 @@ function HomePage() {
             <div
               key={cat.id}
               onClick={() => navigateTo('/shop', { category: cat.slug })}
-              className="bg-[#10191D] hover:bg-[#172126] border border-[#38434A] hover:border-[#FFC928] p-3 rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer group transition-all transform hover:-translate-y-1 shadow-md"
+              className="bg-[#FFFFFF] hover:bg-[#EEEAE1] border border-[#E2DCCF] hover:border-[#C6A15B] p-3 rounded-2xl flex flex-col items-center justify-center text-center cursor-pointer group transition-all transform hover:-translate-y-1 shadow-md"
             >
-              <div className="w-12 h-12 rounded-full bg-[#172126] group-hover:bg-[#FFC928]/10 flex items-center justify-center text-2xl mb-2 transition-colors">
+              <div className="w-12 h-12 rounded-full bg-[#EEEAE1] group-hover:bg-[#C6A15B]/10 flex items-center justify-center text-2xl mb-2 transition-colors">
                 {cat.icon}
               </div>
-              <span className="text-xs font-bold text-[#F8FAFC] group-hover:text-[#FFC928] transition-colors">
+              <span className="text-xs font-bold text-[#171717] group-hover:text-[#C6A15B] transition-colors">
                 {cat.name}
               </span>
-              <span className="text-[10px] text-[#94A3B8]">{cat.count} টি পণ্য</span>
+              <span className="text-[10px] text-[#777168]">{cat.count} টি পণ্য</span>
             </div>
           ))}
         </div>
@@ -821,38 +821,38 @@ function HeroBanner() {
 
   return (
     <div className="relative max-w-7xl mx-auto px-4 pt-4">
-      <div className="relative min-h-[380px] md:min-h-[460px] rounded-3xl overflow-hidden border border-[#38434A] flex items-center bg-[#0A1115]">
+      <div className="relative min-h-[380px] md:min-h-[460px] rounded-3xl overflow-hidden border border-[#E2DCCF] flex items-center bg-[#0A1115]">
         
         {/* Background Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center transition-all duration-700 opacity-30"
           style={{ backgroundImage: `url(${slide.bgImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B0E] via-[#050B0E]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B] via-[#0B0B0B]/80 to-transparent" />
 
         {/* Hero Banner Content Overlay */}
         <div className="relative z-10 max-w-2xl px-6 md:px-12 py-8 space-y-4">
-          <span className="inline-block bg-[#FFC928]/10 text-[#FFC928] border border-[#FFC928]/30 px-3.5 py-1 rounded-full text-xs font-extrabold tracking-wider">
+          <span className="inline-block bg-[#C6A15B]/10 text-[#C6A15B] border border-[#C6A15B]/30 px-3.5 py-1 rounded-full text-xs font-extrabold tracking-wider">
             {slide.badge}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#F8FAFC] leading-tight">
             {slide.title}
           </h2>
-          <p className="text-sm md:text-base text-[#CBD5E1]">
+          <p className="text-sm md:text-base text-[#55514A]">
             {slide.sub}
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
               onClick={() => navigateTo('/shop')}
-              className="bg-[#FFC928] hover:bg-[#E8AD00] text-[#050B0E] font-bold px-7 py-3 rounded-xl shadow-lg shadow-[#FFC928]/20 flex items-center gap-2 transition-all transform hover:scale-105"
+              className="bg-[#C6A15B] hover:bg-[#A88643] text-[#0B0B0B] font-bold px-7 py-3 rounded-xl shadow-lg shadow-[#C6A15B]/20 flex items-center gap-2 transition-all transform hover:scale-105"
             >
               <span>{slide.btnText}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => navigateTo('/track-order')}
-              className="bg-[#172126] hover:bg-[#38434A] text-[#F8FAFC] border border-[#38434A] font-semibold px-5 py-3 rounded-xl transition-colors"
+              className="bg-[#EEEAE1] hover:bg-[#E2DCCF] text-[#F8FAFC] border border-[#E2DCCF] font-semibold px-5 py-3 rounded-xl transition-colors"
             >
               অর্ডার ট্র্যাক করুন
             </button>
@@ -866,7 +866,7 @@ function HeroBanner() {
               key={idx}
               onClick={() => setActiveSlide(idx)}
               className={`w-3 h-3 rounded-full transition-all ${
-                activeSlide === idx ? 'bg-[#FFC928] w-8' : 'bg-[#38434A]'
+                activeSlide === idx ? 'bg-[#C6A15B] w-8' : 'bg-[#E2DCCF]'
               }`}
             />
           ))}
@@ -880,41 +880,41 @@ function HeroBanner() {
 function TrustHighlightsBar() {
   return (
     <div className="max-w-7xl mx-auto px-4">
-      <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-4 grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="flex items-center gap-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-[#FFC928]/10 text-[#FFC928] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-[#C6A15B]/10 text-[#C6A15B] flex items-center justify-center">
             <Truck className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-[#F8FAFC]">দ্রুত ডেলিভারি</h4>
-            <p className="text-[10px] text-[#94A3B8]">সারা বাংলাদেশে ক্যাশ অন ডেলিভারি</p>
+            <h4 className="text-xs font-bold text-[#171717]">দ্রুত ডেলিভারি</h4>
+            <p className="text-[10px] text-[#777168]">সারা বাংলাদেশে ক্যাশ অন ডেলিভারি</p>
           </div>
         </div>
         <div className="flex items-center gap-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-[#FFC928]/10 text-[#FFC928] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-[#C6A15B]/10 text-[#C6A15B] flex items-center justify-center">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-[#F8FAFC]">অরিজিনাল পণ্য</h4>
-            <p className="text-[10px] text-[#94A3B8]">১০০% জেনুইন কোয়ালিটি গ্যারান্টি</p>
+            <h4 className="text-xs font-bold text-[#171717]">অরিজিনাল পণ্য</h4>
+            <p className="text-[10px] text-[#777168]">১০০% জেনুইন কোয়ালিটি গ্যারান্টি</p>
           </div>
         </div>
         <div className="flex items-center gap-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-[#FFC928]/10 text-[#FFC928] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-[#C6A15B]/10 text-[#C6A15B] flex items-center justify-center">
             <RefreshCw className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-[#F8FAFC]">সহজ রিটার্ন</h4>
-            <p className="text-[10px] text-[#94A3B8]">৭ দিনের রিপ্লেসমেন্ট গ্যারান্টি</p>
+            <h4 className="text-xs font-bold text-[#171717]">সহজ রিটার্ন</h4>
+            <p className="text-[10px] text-[#777168]">৭ দিনের রিপ্লেসমেন্ট গ্যারান্টি</p>
           </div>
         </div>
         <div className="flex items-center gap-3 p-2">
-          <div className="w-10 h-10 rounded-xl bg-[#FFC928]/10 text-[#FFC928] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-[#C6A15B]/10 text-[#C6A15B] flex items-center justify-center">
             <PhoneCall className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-[#F8FAFC]">কাস্টমার সাপোর্ট</h4>
-            <p className="text-[10px] text-[#94A3B8]">সারাদিন সার্বক্ষণিক সেবায় প্রস্তুত</p>
+            <h4 className="text-xs font-bold text-[#171717]">কাস্টমার সাপোর্ট</h4>
+            <p className="text-[10px] text-[#777168]">সারাদিন সার্বক্ষণিক সেবায় প্রস্তুত</p>
           </div>
         </div>
       </div>
@@ -930,11 +930,11 @@ function ProductGridSection({ title, subtitle, products }) {
       <div className="flex justify-between items-end mb-6">
         <div>
           <h2 className="text-2xl font-extrabold gold-gradient-text">{title}</h2>
-          <p className="text-xs text-[#94A3B8]">{subtitle}</p>
+          <p className="text-xs text-[#777168]">{subtitle}</p>
         </div>
         <button
           onClick={() => navigateTo('/shop')}
-          className="text-xs font-semibold text-[#FFC928] hover:underline flex items-center gap-1"
+          className="text-xs font-semibold text-[#C6A15B] hover:underline flex items-center gap-1"
         >
           সব দেখুন <ChevronRight className="w-4 h-4" />
         </button>
@@ -954,21 +954,21 @@ function PromotionalBanner() {
 
   return (
     <div className="max-w-7xl mx-auto px-4">
-      <div className="bg-gradient-to-r from-[#10191D] via-[#172126] to-[#10191D] border border-[#FFC928]/30 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+      <div className="bg-gradient-to-r from-[#FFFFFF] via-[#EEEAE1] to-[#FFFFFF] border border-[#C6A15B]/30 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
         <div className="space-y-3 max-w-xl text-center md:text-left">
           <span className="bg-[#EF3038] text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase">
             সীমিত সময়ের জন্য
           </span>
-          <h3 className="text-2xl md:text-4xl font-extrabold text-[#F8FAFC]">
+          <h3 className="text-2xl md:text-4xl font-extrabold text-[#171717]">
             সেরা দামে পছন্দসই প্রিমিয়াম কালেকশন!
           </h3>
-          <p className="text-xs md:text-sm text-[#CBD5E1]">
+          <p className="text-xs md:text-sm text-[#55514A]">
             আজই অর্ডার করুন, পছন্দের পণ্য পৌঁছে যাবে আপনার ঠিকানায়। দ্রুত ডেলিভারি ও ক্যাশ অন ডেলিভারি সুবিধা।
           </p>
         </div>
         <button
           onClick={() => navigateTo('/shop')}
-          className="bg-[#FFC928] hover:bg-[#E8AD00] text-[#050B0E] font-bold px-8 py-3.5 rounded-xl shadow-xl flex items-center gap-2 transition-all transform hover:scale-105 whitespace-nowrap"
+          className="bg-[#C6A15B] hover:bg-[#A88643] text-[#0B0B0B] font-bold px-8 py-3.5 rounded-xl shadow-xl flex items-center gap-2 transition-all transform hover:scale-105 whitespace-nowrap"
         >
           <span>অফার প্রোডাক্ট দেখুন</span>
           <ArrowRight className="w-5 h-5" />
@@ -986,7 +986,7 @@ function ProductCard({ product }) {
   const isWishlisted = wishlist.some((p) => p.id === product.id);
 
   return (
-    <div className="bg-[#10191D] border border-[#38434A] hover:border-[#FFC928] rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl hover:shadow-[#FFC928]/5 relative">
+    <div className="bg-[#FFFFFF] border border-[#E2DCCF] hover:border-[#C6A15B] rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-xl hover:shadow-[#C6A15B]/5 relative">
       
       {/* Discount Badge */}
       {product.discount > 0 && (
@@ -1002,7 +1002,7 @@ function ProductCard({ product }) {
           toggleWishlist(product);
         }}
         className={`absolute top-2.5 right-2.5 z-10 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-          isWishlisted ? 'bg-[#EF3038] text-white' : 'bg-[#050B0E]/60 text-white hover:bg-[#FFC928] hover:text-[#050B0E]'
+          isWishlisted ? 'bg-[#EF3038] text-white' : 'bg-[#0B0B0B]/60 text-white hover:bg-[#C6A15B] hover:text-[#0B0B0B]'
         }`}
       >
         <Heart className="w-4 h-4 fill-current" />
@@ -1011,7 +1011,7 @@ function ProductCard({ product }) {
       {/* Product Image Container */}
       <div 
         onClick={() => navigateTo('/product', { productId: product.id })}
-        className="relative pt-[100%] bg-[#172126] cursor-pointer overflow-hidden"
+        className="relative pt-[100%] bg-[#EEEAE1] cursor-pointer overflow-hidden"
       >
         <img
           src={product.image}
@@ -1025,7 +1025,7 @@ function ProductCard({ product }) {
             e.stopPropagation();
             setQuickViewProduct(product);
           }}
-          className="absolute bottom-2 left-2 right-2 bg-[#050B0E]/80 backdrop-blur-sm text-xs font-semibold py-2 rounded-xl text-[#F8FAFC] hover:bg-[#FFC928] hover:text-[#050B0E] opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-1.5"
+          className="absolute bottom-2 left-2 right-2 bg-[#0B0B0B]/80 backdrop-blur-sm text-xs font-semibold py-2 rounded-xl text-[#171717] hover:bg-[#C6A15B] hover:text-[#0B0B0B] opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center gap-1.5"
         >
           <Eye className="w-3.5 h-3.5" />
           <span>দ্রুত দেখুন</span>
@@ -1036,14 +1036,14 @@ function ProductCard({ product }) {
       <div className="p-3.5 flex-1 flex flex-col justify-between space-y-2">
         <div>
           <div className="flex items-center gap-1 mb-1">
-            <Star className="w-3 h-3 text-[#FFC928] fill-current" />
-            <span className="text-[11px] font-bold text-[#F8FAFC]">{product.rating}</span>
-            <span className="text-[10px] text-[#94A3B8]">({product.reviewsCount})</span>
+            <Star className="w-3 h-3 text-[#C6A15B] fill-current" />
+            <span className="text-[11px] font-bold text-[#171717]">{product.rating}</span>
+            <span className="text-[10px] text-[#777168]">({product.reviewsCount})</span>
           </div>
 
           <h3 
             onClick={() => navigateTo('/product', { productId: product.id })}
-            className="text-xs md:text-sm font-semibold text-[#F8FAFC] line-clamp-2 hover:text-[#FFC928] cursor-pointer transition-colors leading-snug"
+            className="text-xs md:text-sm font-semibold text-[#171717] line-clamp-2 hover:text-[#C6A15B] cursor-pointer transition-colors leading-snug"
           >
             {product.name}
           </h3>
@@ -1051,20 +1051,20 @@ function ProductCard({ product }) {
 
         {/* Size/Color Indicator Preview */}
         {product.sizes && product.sizes.length > 0 && (
-          <div className="flex gap-1 overflow-x-auto text-[9px] text-[#CBD5E1]">
+          <div className="flex gap-1 overflow-x-auto text-[9px] text-[#55514A]">
             <span>সাইজ:</span>
-            <span className="font-bold text-[#FFC928]">{product.sizes.join(', ')}</span>
+            <span className="font-bold text-[#C6A15B]">{product.sizes.join(', ')}</span>
           </div>
         )}
 
         {/* Price & Add to Cart Action */}
-        <div className="pt-2 border-t border-[#38434A]/50 flex items-center justify-between gap-2">
+        <div className="pt-2 border-t border-[#E2DCCF]/50 flex items-center justify-between gap-2">
           <div>
-            <div className="text-sm md:text-base font-extrabold text-[#FFC928]">
+            <div className="text-sm md:text-base font-extrabold text-[#C6A15B]">
               ৳{product.price.toLocaleString('bn-BD')}
             </div>
             {product.originalPrice && (
-              <div className="text-[10px] text-[#94A3B8] line-through">
+              <div className="text-[10px] text-[#777168] line-through">
                 ৳{product.originalPrice.toLocaleString('bn-BD')}
               </div>
             )}
@@ -1072,7 +1072,7 @@ function ProductCard({ product }) {
 
           <button
             onClick={() => addToCart(product, product.sizes?.[0], product.colors?.[0], 1)}
-            className="bg-[#FFC928] hover:bg-[#E8AD00] text-[#050B0E] p-2 rounded-xl font-bold transition-all flex items-center justify-center shadow-md active:scale-95"
+            className="bg-[#C6A15B] hover:bg-[#A88643] text-[#0B0B0B] p-2 rounded-xl font-bold transition-all flex items-center justify-center shadow-md active:scale-95"
             title="কার্টে যোগ করুন"
           >
             <ShoppingCart className="w-4 h-4" />
@@ -1109,23 +1109,23 @@ function ShopPage() {
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-6">
       
       {/* Breadcrumb Header */}
-      <div className="flex items-center gap-2 text-xs text-[#94A3B8]">
+      <div className="flex items-center gap-2 text-xs text-[#777168]">
         <span>হোম</span>
         <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-[#FFC928] font-semibold">শপ / ক্যাটাগরি তালিকা</span>
+        <span className="text-[#C6A15B] font-semibold">শপ / ক্যাটাগরি তালিকা</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         {/* Filter Sidebar */}
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-5 space-y-6 h-fit">
-          <div className="flex items-center justify-between border-b border-[#38434A] pb-3">
-            <h3 className="font-bold text-sm flex items-center gap-2 text-[#FFC928]">
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-5 space-y-6 h-fit">
+          <div className="flex items-center justify-between border-b border-[#E2DCCF] pb-3">
+            <h3 className="font-bold text-sm flex items-center gap-2 text-[#C6A15B]">
               <Filter className="w-4 h-4" /> ফিল্টার করুন
             </h3>
             <button 
               onClick={() => { setSelectedCategorySlug('all'); setPriceRange(10000); }}
-              className="text-xs text-[#94A3B8] hover:text-[#FFC928]"
+              className="text-xs text-[#777168] hover:text-[#C6A15B]"
             >
               রিসেট
             </button>
@@ -1133,12 +1133,12 @@ function ShopPage() {
 
           {/* Category Selector */}
           <div>
-            <h4 className="text-xs font-bold text-[#F8FAFC] mb-3">ক্যাটাগরি</h4>
+            <h4 className="text-xs font-bold text-[#171717] mb-3">ক্যাটাগরি</h4>
             <div className="space-y-1.5 max-h-60 overflow-y-auto pr-1">
               <button
                 onClick={() => setSelectedCategorySlug('all')}
                 className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-all ${
-                  selectedCategorySlug === 'all' ? 'bg-[#FFC928] text-[#050B0E] font-bold' : 'text-[#CBD5E1] hover:bg-[#172126]'
+                  selectedCategorySlug === 'all' ? 'bg-[#C6A15B] text-[#0B0B0B] font-bold' : 'text-[#55514A] hover:bg-[#EEEAE1]'
                 }`}
               >
                 সব ক্যাটাগরি ({products.length})
@@ -1148,7 +1148,7 @@ function ShopPage() {
                   key={cat.id}
                   onClick={() => setSelectedCategorySlug(cat.slug)}
                   className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-all flex justify-between items-center ${
-                    selectedCategorySlug === cat.slug ? 'bg-[#FFC928] text-[#050B0E] font-bold' : 'text-[#CBD5E1] hover:bg-[#172126]'
+                    selectedCategorySlug === cat.slug ? 'bg-[#C6A15B] text-[#0B0B0B] font-bold' : 'text-[#55514A] hover:bg-[#EEEAE1]'
                   }`}
                 >
                   <span>{cat.icon} {cat.name}</span>
@@ -1161,8 +1161,8 @@ function ShopPage() {
           {/* Price Range Filter */}
           <div>
             <div className="flex justify-between text-xs mb-2">
-              <span className="font-bold text-[#F8FAFC]">সর্বোচ্চ দাম:</span>
-              <span className="text-[#FFC928] font-bold">৳{priceRange}</span>
+              <span className="font-bold text-[#171717]">সর্বোচ্চ দাম:</span>
+              <span className="text-[#C6A15B] font-bold">৳{priceRange}</span>
             </div>
             <input
               type="range"
@@ -1171,7 +1171,7 @@ function ShopPage() {
               step="250"
               value={priceRange}
               onChange={(e) => setPriceRange(Number(e.target.value))}
-              className="w-full accent-[#FFC928] cursor-pointer"
+              className="w-full accent-[#C6A15B] cursor-pointer"
             />
           </div>
         </div>
@@ -1180,17 +1180,17 @@ function ShopPage() {
         <div className="lg:col-span-3 space-y-4">
           
           {/* Top Sort Header */}
-          <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-4 flex flex-wrap justify-between items-center gap-4">
-            <p className="text-xs text-[#CBD5E1]">
-              মোট <strong className="text-[#FFC928]">{filteredProducts.length}</strong> টি পণ্য পাওয়া গেছে
+          <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-4 flex flex-wrap justify-between items-center gap-4">
+            <p className="text-xs text-[#55514A]">
+              মোট <strong className="text-[#C6A15B]">{filteredProducts.length}</strong> টি পণ্য পাওয়া গেছে
             </p>
 
             <div className="flex items-center gap-2">
-              <span className="text-xs text-[#94A3B8]">সাজান:</span>
+              <span className="text-xs text-[#777168]">সাজান:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-[#172126] text-[#F8FAFC] border border-[#38434A] text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-[#FFC928]"
+                className="bg-[#EEEAE1] text-[#171717] border border-[#E2DCCF] text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-[#C6A15B]"
               >
                 <option value="popular">জনপ্রিয়তা অনুযায়ী</option>
                 <option value="price-low">দাম: কম থেকে বেশি</option>
@@ -1207,10 +1207,10 @@ function ShopPage() {
               ))}
             </div>
           ) : (
-            <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-12 text-center space-y-3">
-              <AlertCircle className="w-10 h-10 text-[#FFC928] mx-auto" />
+            <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-12 text-center space-y-3">
+              <AlertCircle className="w-10 h-10 text-[#C6A15B] mx-auto" />
               <h3 className="text-base font-bold">কোন পণ্য পাওয়া যায়নি</h3>
-              <p className="text-xs text-[#94A3B8]">আপনার নির্বাচন করা ফিল্টারে কোন পণ্য পাওয়া যায়নি।</p>
+              <p className="text-xs text-[#777168]">আপনার নির্বাচন করা ফিল্টারে কোন পণ্য পাওয়া যায়নি।</p>
             </div>
           )}
 
@@ -1257,19 +1257,19 @@ function ProductDetailPage() {
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">
       
       {/* Breadcrumb Navigation */}
-      <div className="flex items-center gap-2 text-xs text-[#94A3B8]">
-        <button onClick={() => navigateTo('/')} className="hover:text-[#FFC928]">হোম</button>
+      <div className="flex items-center gap-2 text-xs text-[#777168]">
+        <button onClick={() => navigateTo('/')} className="hover:text-[#C6A15B]">হোম</button>
         <ChevronRight className="w-3.5 h-3.5" />
-        <button onClick={() => navigateTo('/shop')} className="hover:text-[#FFC928]">পণ্য</button>
+        <button onClick={() => navigateTo('/shop')} className="hover:text-[#C6A15B]">পণ্য</button>
         <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-[#FFC928] font-semibold truncate">{product.name}</span>
+        <span className="text-[#C6A15B] font-semibold truncate">{product.name}</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {/* Left Image Gallery */}
         <div className="space-y-4">
-          <div className="bg-[#10191D] border border-[#38434A] rounded-3xl p-4 overflow-hidden relative">
+          <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-3xl p-4 overflow-hidden relative">
             <img src={selectedImage} alt={product.name} className="w-full h-80 md:h-[420px] object-cover rounded-2xl" />
           </div>
 
@@ -1279,7 +1279,7 @@ function ProductDetailPage() {
                 key={idx}
                 onClick={() => setSelectedImage(img)}
                 className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 ${
-                  selectedImage === img ? 'border-[#FFC928]' : 'border-[#38434A] opacity-60'
+                  selectedImage === img ? 'border-[#C6A15B]' : 'border-[#E2DCCF] opacity-60'
                 }`}
               >
                 <img src={img} alt="" className="w-full h-full object-cover" />
@@ -1289,22 +1289,22 @@ function ProductDetailPage() {
         </div>
 
         {/* Right Details & Variant Selectors */}
-        <div className="bg-[#10191D] border border-[#38434A] rounded-3xl p-6 space-y-6">
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-3xl p-6 space-y-6">
           <div>
-            <span className="text-xs font-bold text-[#FFC928] bg-[#FFC928]/10 border border-[#FFC928]/30 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold text-[#C6A15B] bg-[#C6A15B]/10 border border-[#C6A15B]/30 px-3 py-1 rounded-full">
               {product.categoryName}
             </span>
-            <h1 className="text-xl md:text-2xl font-extrabold text-[#F8FAFC] mt-3">{product.name}</h1>
-            <p className="text-xs text-[#94A3B8] mt-1">SKU: {product.sku}</p>
+            <h1 className="text-xl md:text-2xl font-extrabold text-[#171717] mt-3">{product.name}</h1>
+            <p className="text-xs text-[#777168] mt-1">SKU: {product.sku}</p>
           </div>
 
           {/* Pricing Banner */}
-          <div className="bg-[#172126] p-4 rounded-2xl flex items-center gap-4">
-            <span className="text-2xl md:text-3xl font-extrabold text-[#FFC928]">
+          <div className="bg-[#EEEAE1] p-4 rounded-2xl flex items-center gap-4">
+            <span className="text-2xl md:text-3xl font-extrabold text-[#C6A15B]">
               ৳{product.price.toLocaleString('bn-BD')}
             </span>
             {product.originalPrice && (
-              <span className="text-sm text-[#94A3B8] line-through">
+              <span className="text-sm text-[#777168] line-through">
                 ৳{product.originalPrice.toLocaleString('bn-BD')}
               </span>
             )}
@@ -1318,9 +1318,9 @@ function ProductDetailPage() {
           {/* 1. Size Selection Swatches */}
           {product.sizes && product.sizes.length > 0 && (
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#F8FAFC] flex justify-between">
+              <label className="text-xs font-bold text-[#171717] flex justify-between">
                 <span>সাইজ সিলেক্ট করুন:</span>
-                <span className="text-[#FFC928]">{selectedSize}</span>
+                <span className="text-[#C6A15B]">{selectedSize}</span>
               </label>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((sz) => (
@@ -1329,8 +1329,8 @@ function ProductDetailPage() {
                     onClick={() => setSelectedSize(sz)}
                     className={`px-4 py-2 text-xs font-bold rounded-xl border transition-all ${
                       selectedSize === sz
-                        ? 'bg-[#FFC928] text-[#050B0E] border-[#FFC928]'
-                        : 'bg-[#172126] text-[#CBD5E1] border-[#38434A] hover:border-[#FFC928]'
+                        ? 'bg-[#C6A15B] text-[#0B0B0B] border-[#C6A15B]'
+                        : 'bg-[#EEEAE1] text-[#55514A] border-[#E2DCCF] hover:border-[#C6A15B]'
                     }`}
                   >
                     {sz}
@@ -1343,9 +1343,9 @@ function ProductDetailPage() {
           {/* 2. Color Selection Swatches */}
           {product.colors && product.colors.length > 0 && (
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#F8FAFC] flex justify-between">
+              <label className="text-xs font-bold text-[#171717] flex justify-between">
                 <span>কালার সিলেক্ট করুন:</span>
-                <span className="text-[#FFC928]">{selectedColor?.label}</span>
+                <span className="text-[#C6A15B]">{selectedColor?.label}</span>
               </label>
               <div className="flex flex-wrap gap-3">
                 {product.colors.map((clr) => (
@@ -1354,8 +1354,8 @@ function ProductDetailPage() {
                     onClick={() => setSelectedColor(clr)}
                     className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-xs font-semibold transition-all ${
                       selectedColor?.name === clr.name
-                        ? 'border-[#FFC928] bg-[#172126] ring-1 ring-[#FFC928]'
-                        : 'border-[#38434A] bg-[#172126] opacity-70 hover:opacity-100'
+                        ? 'border-[#C6A15B] bg-[#EEEAE1] ring-1 ring-[#C6A15B]'
+                        : 'border-[#E2DCCF] bg-[#EEEAE1] opacity-70 hover:opacity-100'
                     }`}
                   >
                     <span className="w-3.5 h-3.5 rounded-full border border-white/20" style={{ backgroundColor: clr.hex }} />
@@ -1368,24 +1368,24 @@ function ProductDetailPage() {
 
           {/* Quantity Selector */}
           <div className="space-y-2">
-            <label className="text-xs font-bold text-[#F8FAFC]">পরিমাণ:</label>
+            <label className="text-xs font-bold text-[#171717]">পরিমাণ:</label>
             <div className="flex items-center gap-3">
-              <div className="flex items-center bg-[#172126] border border-[#38434A] rounded-xl p-1">
+              <div className="flex items-center bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-1">
                 <button
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                  className="w-8 h-8 flex items-center justify-center text-[#F8FAFC] hover:text-[#FFC928]"
+                  className="w-8 h-8 flex items-center justify-center text-[#171717] hover:text-[#C6A15B]"
                 >
                   <Minus className="w-4 h-4" />
                 </button>
-                <span className="w-10 text-center font-bold text-sm text-[#FFC928]">{quantity}</span>
+                <span className="w-10 text-center font-bold text-sm text-[#C6A15B]">{quantity}</span>
                 <button
                   onClick={() => setQuantity((q) => q + 1)}
-                  className="w-8 h-8 flex items-center justify-center text-[#F8FAFC] hover:text-[#FFC928]"
+                  className="w-8 h-8 flex items-center justify-center text-[#171717] hover:text-[#C6A15B]"
                 >
                   <Plus className="w-4 h-4" />
                 </button>
               </div>
-              <span className="text-xs text-[#94A3B8]">স্টক উপলব্ধ: {product.stock} টি</span>
+              <span className="text-xs text-[#777168]">স্টক উপলব্ধ: {product.stock} টি</span>
             </div>
           </div>
 
@@ -1396,16 +1396,16 @@ function ProductDetailPage() {
                 addToCart(product, selectedSize, selectedColor, quantity);
                 navigateTo('/checkout');
               }}
-              className="w-full bg-[#FFC928] hover:bg-[#E8AD00] text-[#050B0E] font-extrabold py-3.5 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition-all transform active:scale-98"
+              className="w-full bg-[#C6A15B] hover:bg-[#A88643] text-[#0B0B0B] font-extrabold py-3.5 rounded-2xl shadow-xl flex items-center justify-center gap-2 transition-all transform active:scale-98"
             >
               <span>এখনই কিনুন (Buy Now)</span>
             </button>
 
             <button
               onClick={() => addToCart(product, selectedSize, selectedColor, quantity)}
-              className="w-full bg-[#172126] hover:bg-[#38434A] text-[#F8FAFC] border border-[#38434A] font-bold py-3 rounded-2xl flex items-center justify-center gap-2 transition-colors"
+              className="w-full bg-[#EEEAE1] hover:bg-[#E2DCCF] text-[#171717] border border-[#E2DCCF] font-bold py-3 rounded-2xl flex items-center justify-center gap-2 transition-colors"
             >
-              <ShoppingCart className="w-4 h-4 text-[#FFC928]" />
+              <ShoppingCart className="w-4 h-4 text-[#C6A15B]" />
               <span>কার্টে যোগ করুন</span>
             </button>
 
@@ -1422,9 +1422,9 @@ function ProductDetailPage() {
           </div>
 
           {/* Description */}
-          <div className="border-t border-[#38434A] pt-4 space-y-2">
-            <h4 className="text-xs font-bold text-[#F8FAFC]">পণ্যের বিবরণ:</h4>
-            <p className="text-xs text-[#CBD5E1] leading-relaxed">{product.description}</p>
+          <div className="border-t border-[#E2DCCF] pt-4 space-y-2">
+            <h4 className="text-xs font-bold text-[#171717]">পণ্যের বিবরণ:</h4>
+            <p className="text-xs text-[#55514A] leading-relaxed">{product.description}</p>
           </div>
 
         </div>
@@ -1445,10 +1445,10 @@ function QuickViewModal({ product, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-[#10191D] border border-[#38434A] w-full max-w-2xl rounded-3xl p-6 relative space-y-4 max-h-[90vh] overflow-y-auto">
+      <div className="bg-[#FFFFFF] border border-[#E2DCCF] w-full max-w-2xl rounded-3xl p-6 relative space-y-4 max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-[#172126] text-[#CBD5E1] hover:text-white"
+          className="absolute top-4 right-4 p-2 rounded-full bg-[#EEEAE1] text-[#55514A] hover:text-white"
         >
           <X className="w-5 h-5" />
         </button>
@@ -1456,18 +1456,18 @@ function QuickViewModal({ product, onClose }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <img src={product.image} alt={product.name} className="w-full h-64 object-cover rounded-2xl" />
           <div className="space-y-4">
-            <h3 className="font-extrabold text-lg text-[#F8FAFC]">{product.name}</h3>
-            <div className="text-xl font-extrabold text-[#FFC928]">৳{product.price}</div>
+            <h3 className="font-extrabold text-lg text-[#171717]">{product.name}</h3>
+            <div className="text-xl font-extrabold text-[#C6A15B]">৳{product.price}</div>
             
             {product.sizes && (
               <div className="space-y-1">
-                <span className="text-xs text-[#94A3B8]">সাইজ:</span>
+                <span className="text-xs text-[#777168]">সাইজ:</span>
                 <div className="flex gap-2">
                   {product.sizes.map((s) => (
                     <button
                       key={s}
                       onClick={() => setSelectedSize(s)}
-                      className={`px-3 py-1 text-xs rounded-lg border ${selectedSize === s ? 'bg-[#FFC928] text-black font-bold' : 'border-[#38434A]'}`}
+                      className={`px-3 py-1 text-xs rounded-lg border ${selectedSize === s ? 'bg-[#C6A15B] text-black font-bold' : 'border-[#E2DCCF]'}`}
                     >
                       {s}
                     </button>
@@ -1482,7 +1482,7 @@ function QuickViewModal({ product, onClose }) {
                   addToCart(product, selectedSize, selectedColor, 1);
                   onClose();
                 }}
-                className="flex-1 bg-[#FFC928] text-[#050B0E] font-bold py-2.5 rounded-xl text-xs"
+                className="flex-1 bg-[#C6A15B] text-[#0B0B0B] font-bold py-2.5 rounded-xl text-xs"
               >
                 কার্টে যোগ করুন
               </button>
@@ -1491,7 +1491,7 @@ function QuickViewModal({ product, onClose }) {
                   navigateTo('/product', { productId: product.id });
                   onClose();
                 }}
-                className="px-4 bg-[#172126] border border-[#38434A] text-xs font-semibold rounded-xl"
+                className="px-4 bg-[#EEEAE1] border border-[#E2DCCF] text-xs font-semibold rounded-xl"
               >
                 বিস্তারিত
               </button>
@@ -1515,15 +1515,15 @@ function CartDrawer() {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex justify-end">
-      <div className="bg-[#10191D] border-l border-[#38434A] w-full max-w-md h-full flex flex-col justify-between p-6">
+      <div className="bg-[#FFFFFF] border-l border-[#E2DCCF] w-full max-w-md h-full flex flex-col justify-between p-6">
         
         {/* Cart Drawer Header */}
-        <div className="flex items-center justify-between border-b border-[#38434A] pb-4">
+        <div className="flex items-center justify-between border-b border-[#E2DCCF] pb-4">
           <h3 className="font-extrabold text-base flex items-center gap-2 gold-gradient-text">
-            <ShoppingCart className="w-5 h-5 text-[#FFC928]" />
+            <ShoppingCart className="w-5 h-5 text-[#C6A15B]" />
             <span>আপনার শপিং কার্ট</span>
           </h3>
-          <button onClick={() => setIsCartOpen(false)} className="p-2 text-[#CBD5E1] hover:text-white">
+          <button onClick={() => setIsCartOpen(false)} className="p-2 text-[#55514A] hover:text-white">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -1532,28 +1532,28 @@ function CartDrawer() {
         <div className="flex-1 overflow-y-auto py-4 space-y-4">
           {cart.length === 0 ? (
             <div className="text-center py-12 space-y-3">
-              <ShoppingBag className="w-12 h-12 text-[#38434A] mx-auto" />
-              <p className="text-sm text-[#94A3B8]">আপনার কার্ট বর্তমানে খালি</p>
+              <ShoppingBag className="w-12 h-12 text-[#E2DCCF] mx-auto" />
+              <p className="text-sm text-[#777168]">আপনার কার্ট বর্তমানে খালি</p>
             </div>
           ) : (
             cart.map((item) => (
-              <div key={item.cartItemId} className="bg-[#172126] p-3 rounded-2xl flex items-center gap-3 border border-[#38434A]">
+              <div key={item.cartItemId} className="bg-[#EEEAE1] p-3 rounded-2xl flex items-center gap-3 border border-[#E2DCCF]">
                 <img src={item.product.image} alt="" className="w-16 h-16 object-cover rounded-xl" />
                 <div className="flex-1 min-w-0 space-y-1">
-                  <h4 className="text-xs font-bold text-[#F8FAFC] truncate">{item.product.name}</h4>
-                  <p className="text-[10px] text-[#94A3B8]">
+                  <h4 className="text-xs font-bold text-[#171717] truncate">{item.product.name}</h4>
+                  <p className="text-[10px] text-[#777168]">
                     {item.selectedSize && `সাইজ: ${item.selectedSize}`} {item.selectedColor && `| কালার: ${item.selectedColor.label}`}
                   </p>
-                  <p className="text-xs font-bold text-[#FFC928]">৳{item.product.price}</p>
+                  <p className="text-xs font-bold text-[#C6A15B]">৳{item.product.price}</p>
                 </div>
 
-                <div className="flex items-center gap-1 bg-[#10191D] rounded-lg p-1 border border-[#38434A]">
+                <div className="flex items-center gap-1 bg-[#FFFFFF] rounded-lg p-1 border border-[#E2DCCF]">
                   <button onClick={() => updateCartQuantity(item.cartItemId, item.quantity - 1)} className="p-1">
-                    <Minus className="w-3 h-3 text-[#CBD5E1]" />
+                    <Minus className="w-3 h-3 text-[#55514A]" />
                   </button>
-                  <span className="text-xs font-bold px-1 text-[#FFC928]">{item.quantity}</span>
+                  <span className="text-xs font-bold px-1 text-[#C6A15B]">{item.quantity}</span>
                   <button onClick={() => updateCartQuantity(item.cartItemId, item.quantity + 1)} className="p-1">
-                    <Plus className="w-3 h-3 text-[#CBD5E1]" />
+                    <Plus className="w-3 h-3 text-[#55514A]" />
                   </button>
                 </div>
 
@@ -1567,10 +1567,10 @@ function CartDrawer() {
 
         {/* Cart Drawer Footer Subtotal & Checkout */}
         {cart.length > 0 && (
-          <div className="border-t border-[#38434A] pt-4 space-y-4">
+          <div className="border-t border-[#E2DCCF] pt-4 space-y-4">
             <div className="flex justify-between items-center text-sm">
-              <span className="text-[#CBD5E1]">মোট হিসাব (Subtotal):</span>
-              <span className="font-extrabold text-[#FFC928] text-base">৳{subtotal.toLocaleString('bn-BD')}</span>
+              <span className="text-[#55514A]">মোট হিসাব (Subtotal):</span>
+              <span className="font-extrabold text-[#C6A15B] text-base">৳{subtotal.toLocaleString('bn-BD')}</span>
             </div>
             
             <div className="space-y-2">
@@ -1579,7 +1579,7 @@ function CartDrawer() {
                   setIsCartOpen(false);
                   navigateTo('/checkout');
                 }}
-                className="w-full bg-[#FFC928] hover:bg-[#E8AD00] text-[#050B0E] font-extrabold py-3 rounded-xl shadow-lg transition-all"
+                className="w-full bg-[#C6A15B] hover:bg-[#A88643] text-[#0B0B0B] font-extrabold py-3 rounded-xl shadow-lg transition-all"
               >
                 চেকআউট করুন
               </button>
@@ -1588,7 +1588,7 @@ function CartDrawer() {
                   setIsCartOpen(false);
                   navigateTo('/cart');
                 }}
-                className="w-full bg-[#172126] border border-[#38434A] text-[#F8FAFC] font-semibold py-2.5 rounded-xl text-xs"
+                className="w-full bg-[#EEEAE1] border border-[#E2DCCF] text-[#171717] font-semibold py-2.5 rounded-xl text-xs"
               >
                 কার্ট দেখুন
               </button>
@@ -1611,10 +1611,10 @@ function CartPage() {
       <h2 className="text-2xl font-extrabold gold-gradient-text">শপিং কার্ট</h2>
 
       {cart.length === 0 ? (
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-12 text-center space-y-4">
-          <ShoppingBag className="w-12 h-12 text-[#38434A] mx-auto" />
-          <p className="text-sm text-[#94A3B8]">আপনার কার্টে কোন পণ্য যোগ করা হয়নি</p>
-          <button onClick={() => navigateTo('/shop')} className="bg-[#FFC928] text-[#050B0E] font-bold px-6 py-2.5 rounded-xl text-xs">
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-12 text-center space-y-4">
+          <ShoppingBag className="w-12 h-12 text-[#E2DCCF] mx-auto" />
+          <p className="text-sm text-[#777168]">আপনার কার্টে কোন পণ্য যোগ করা হয়নি</p>
+          <button onClick={() => navigateTo('/shop')} className="bg-[#C6A15B] text-[#0B0B0B] font-bold px-6 py-2.5 rounded-xl text-xs">
             শপিং শুরু করুন
           </button>
         </div>
@@ -1622,21 +1622,21 @@ function CartPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-4">
             {cart.map((item) => (
-              <div key={item.cartItemId} className="bg-[#10191D] border border-[#38434A] rounded-2xl p-4 flex items-center gap-4">
+              <div key={item.cartItemId} className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-4 flex items-center gap-4">
                 <img src={item.product.image} alt="" className="w-20 h-20 object-cover rounded-xl" />
                 <div className="flex-1 space-y-1">
-                  <h4 className="text-sm font-bold text-[#F8FAFC]">{item.product.name}</h4>
-                  <p className="text-xs text-[#94A3B8]">
+                  <h4 className="text-sm font-bold text-[#171717]">{item.product.name}</h4>
+                  <p className="text-xs text-[#777168]">
                     {item.selectedSize && `সাইজ: ${item.selectedSize}`} {item.selectedColor && `| কালার: ${item.selectedColor.label}`}
                   </p>
-                  <p className="text-sm font-bold text-[#FFC928]">৳{item.product.price}</p>
+                  <p className="text-sm font-bold text-[#C6A15B]">৳{item.product.price}</p>
                 </div>
 
-                <div className="flex items-center gap-2 bg-[#172126] border border-[#38434A] rounded-xl p-1">
+                <div className="flex items-center gap-2 bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-1">
                   <button onClick={() => updateCartQuantity(item.cartItemId, item.quantity - 1)} className="px-2">
                     -
                   </button>
-                  <span className="text-xs font-bold text-[#FFC928]">{item.quantity}</span>
+                  <span className="text-xs font-bold text-[#C6A15B]">{item.quantity}</span>
                   <button onClick={() => updateCartQuantity(item.cartItemId, item.quantity + 1)} className="px-2">
                     +
                   </button>
@@ -1649,23 +1649,23 @@ function CartPage() {
             ))}
           </div>
 
-          <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-6 space-y-4 h-fit">
-            <h3 className="font-bold text-sm border-b border-[#38434A] pb-3">অর্ডার সামারি</h3>
-            <div className="flex justify-between text-xs text-[#CBD5E1]">
+          <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-6 space-y-4 h-fit">
+            <h3 className="font-bold text-sm border-b border-[#E2DCCF] pb-3">অর্ডার সামারি</h3>
+            <div className="flex justify-between text-xs text-[#55514A]">
               <span>পণ্যমূল্য:</span>
               <span>৳{subtotal.toLocaleString('bn-BD')}</span>
             </div>
-            <div className="flex justify-between text-xs text-[#CBD5E1]">
+            <div className="flex justify-between text-xs text-[#55514A]">
               <span>ডেলিভারি চার্জ:</span>
-              <span className="text-xs text-[#94A3B8]">চেকআউটে হিসাব করা হবে</span>
+              <span className="text-xs text-[#777168]">চেকআউটে হিসাব করা হবে</span>
             </div>
-            <div className="border-t border-[#38434A] pt-3 flex justify-between font-extrabold text-sm text-[#FFC928]">
+            <div className="border-t border-[#E2DCCF] pt-3 flex justify-between font-extrabold text-sm text-[#C6A15B]">
               <span>মোট:</span>
               <span>৳{subtotal.toLocaleString('bn-BD')}</span>
             </div>
             <button
               onClick={() => navigateTo('/checkout')}
-              className="w-full bg-[#FFC928] text-[#050B0E] font-extrabold py-3 rounded-xl"
+              className="w-full bg-[#C6A15B] text-[#0B0B0B] font-extrabold py-3 rounded-xl"
             >
               চেকআউট করুন
             </button>
@@ -1737,53 +1737,53 @@ function CheckoutPage() {
         
         {/* Left Address & Customer Info Form */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-6 space-y-4">
-            <h3 className="font-bold text-sm text-[#FFC928] flex items-center gap-2 border-b border-[#38434A] pb-3">
+          <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-6 space-y-4">
+            <h3 className="font-bold text-sm text-[#C6A15B] flex items-center gap-2 border-b border-[#E2DCCF] pb-3">
               <MapPin className="w-4 h-4" /> আপনার ডেলিভারি ঠিকানা
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs font-semibold text-[#CBD5E1] mb-1 block">আপনার নাম *</label>
+                <label className="text-xs font-semibold text-[#55514A] mb-1 block">আপনার নাম *</label>
                 <input
                   type="text"
                   required
                   placeholder="পূর্ণ নাম লিখুন"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#172126] text-[#F8FAFC] border border-[#38434A] rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#FFC928]"
+                  className="w-full bg-[#EEEAE1] text-[#171717] border border-[#E2DCCF] rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#C6A15B]"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-[#CBD5E1] mb-1 block">মোবাইল নম্বর *</label>
+                <label className="text-xs font-semibold text-[#55514A] mb-1 block">মোবাইল নম্বর *</label>
                 <input
                   type="tel"
                   required
                   placeholder="১১ ডিজিটের নম্বর"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-[#172126] text-[#F8FAFC] border border-[#38434A] rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#FFC928]"
+                  className="w-full bg-[#EEEAE1] text-[#171717] border border-[#E2DCCF] rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-[#C6A15B]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-xs font-semibold text-[#CBD5E1] mb-1 block">সম্পূর্ণ ঠিকানা *</label>
+              <label className="text-xs font-semibold text-[#55514A] mb-1 block">সম্পূর্ণ ঠিকানা *</label>
               <textarea
                 required
                 rows={3}
                 placeholder="বাসা নম্বর, রোড নম্বর, এলাকা, থানা ও জেলা লিখুন..."
                 value={formData.address}
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                className="w-full bg-[#172126] text-[#F8FAFC] border border-[#38434A] rounded-xl p-3 text-xs focus:outline-none focus:border-[#FFC928]"
+                className="w-full bg-[#EEEAE1] text-[#171717] border border-[#E2DCCF] rounded-xl p-3 text-xs focus:outline-none focus:border-[#C6A15B]"
               />
             </div>
           </div>
 
           {/* Delivery Zone Selector */}
-          <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-6 space-y-4">
-            <h3 className="font-bold text-sm text-[#FFC928] flex items-center gap-2 border-b border-[#38434A] pb-3">
+          <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-6 space-y-4">
+            <h3 className="font-bold text-sm text-[#C6A15B] flex items-center gap-2 border-b border-[#E2DCCF] pb-3">
               <Truck className="w-4 h-4" /> ডেলিভারি এলাকা নির্বাচন করুন
             </h3>
 
@@ -1791,56 +1791,56 @@ function CheckoutPage() {
               <div
                 onClick={() => setDeliveryZone('inside_dhaka')}
                 className={`p-4 rounded-xl border cursor-pointer transition-all ${
-                  deliveryZone === 'inside_dhaka' ? 'border-[#FFC928] bg-[#172126]' : 'border-[#38434A]'
+                  deliveryZone === 'inside_dhaka' ? 'border-[#C6A15B] bg-[#EEEAE1]' : 'border-[#E2DCCF]'
                 }`}
               >
                 <div className="flex justify-between items-center font-bold text-xs">
                   <span>ঢাকার ভেতরে</span>
-                  <span className="text-[#FFC928]">৳৬০</span>
+                  <span className="text-[#C6A15B]">৳৬০</span>
                 </div>
-                <p className="text-[10px] text-[#94A3B8] mt-1">১-২ কার্যদিবসের মধ্যে ডেলিভারি</p>
+                <p className="text-[10px] text-[#777168] mt-1">১-২ কার্যদিবসের মধ্যে ডেলিভারি</p>
               </div>
 
               <div
                 onClick={() => setDeliveryZone('outside_dhaka')}
                 className={`p-4 rounded-xl border cursor-pointer transition-all ${
-                  deliveryZone === 'outside_dhaka' ? 'border-[#FFC928] bg-[#172126]' : 'border-[#38434A]'
+                  deliveryZone === 'outside_dhaka' ? 'border-[#C6A15B] bg-[#EEEAE1]' : 'border-[#E2DCCF]'
                 }`}
               >
                 <div className="flex justify-between items-center font-bold text-xs">
                   <span>ঢাকার বাইরে</span>
-                  <span className="text-[#FFC928]">৳১২০</span>
+                  <span className="text-[#C6A15B]">৳১২০</span>
                 </div>
-                <p className="text-[10px] text-[#94A3B8] mt-1">২-৪ কার্যদিবসের মধ্যে ডেলিভারি</p>
+                <p className="text-[10px] text-[#777168] mt-1">২-৪ কার্যদিবসের মধ্যে ডেলিভারি</p>
               </div>
             </div>
           </div>
 
           {/* Payment Method Selector */}
-          <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-6 space-y-4">
-            <h3 className="font-bold text-sm text-[#FFC928] flex items-center gap-2 border-b border-[#38434A] pb-3">
+          <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-6 space-y-4">
+            <h3 className="font-bold text-sm text-[#C6A15B] flex items-center gap-2 border-b border-[#E2DCCF] pb-3">
               <CreditCard className="w-4 h-4" /> পেমেন্ট পদ্ধতি
             </h3>
 
             <div className="space-y-2">
-              <label className="flex items-center gap-3 p-3 bg-[#172126] border border-[#38434A] rounded-xl cursor-pointer">
+              <label className="flex items-center gap-3 p-3 bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl cursor-pointer">
                 <input
                   type="radio"
                   name="payment"
                   checked={paymentMethod === 'cod'}
                   onChange={() => setPaymentMethod('cod')}
-                  className="accent-[#FFC928]"
+                  className="accent-[#C6A15B]"
                 />
                 <span className="text-xs font-bold">ক্যাশ অন ডেলিভারি (পণ্য হাতে পেয়ে টাকা দিন)</span>
               </label>
 
-              <label className="flex items-center gap-3 p-3 bg-[#172126] border border-[#38434A] rounded-xl cursor-pointer opacity-80">
+              <label className="flex items-center gap-3 p-3 bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl cursor-pointer opacity-80">
                 <input
                   type="radio"
                   name="payment"
                   checked={paymentMethod === 'bkash'}
                   onChange={() => setPaymentMethod('bkash')}
-                  className="accent-[#FFC928]"
+                  className="accent-[#C6A15B]"
                 />
                 <span className="text-xs font-bold">বিকাশ / নগদ (bKash / Nagad Mobile Banking)</span>
               </label>
@@ -1849,19 +1849,19 @@ function CheckoutPage() {
         </div>
 
         {/* Right Summary Area */}
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-6 space-y-4 h-fit">
-          <h3 className="font-bold text-sm border-b border-[#38434A] pb-3">অর্ডার সামারি</h3>
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-6 space-y-4 h-fit">
+          <h3 className="font-bold text-sm border-b border-[#E2DCCF] pb-3">অর্ডার সামারি</h3>
 
           <div className="space-y-3 max-h-60 overflow-y-auto">
             {cart.map((item) => (
               <div key={item.cartItemId} className="flex justify-between text-xs">
-                <span className="text-[#CBD5E1] truncate max-w-[160px]">{item.product.name} x {item.quantity}</span>
-                <span className="font-bold text-[#FFC928]">৳{item.product.price * item.quantity}</span>
+                <span className="text-[#55514A] truncate max-w-[160px]">{item.product.name} x {item.quantity}</span>
+                <span className="font-bold text-[#C6A15B]">৳{item.product.price * item.quantity}</span>
               </div>
             ))}
           </div>
 
-          <div className="border-t border-[#38434A] pt-3 space-y-2 text-xs text-[#CBD5E1]">
+          <div className="border-t border-[#E2DCCF] pt-3 space-y-2 text-xs text-[#55514A]">
             <div className="flex justify-between">
               <span>সাবটোটাল:</span>
               <span>৳{subtotal.toLocaleString('bn-BD')}</span>
@@ -1870,7 +1870,7 @@ function CheckoutPage() {
               <span>ডেলিভারি চার্জ:</span>
               <span>৳{deliveryFee}</span>
             </div>
-            <div className="border-t border-[#38434A] pt-2 flex justify-between font-extrabold text-base text-[#FFC928]">
+            <div className="border-t border-[#E2DCCF] pt-2 flex justify-between font-extrabold text-base text-[#C6A15B]">
               <span>সর্বমোট:</span>
               <span>৳{totalAmount.toLocaleString('bn-BD')}</span>
             </div>
@@ -1878,7 +1878,7 @@ function CheckoutPage() {
 
           <button
             type="submit"
-            className="w-full bg-[#FFC928] hover:bg-[#E8AD00] text-[#050B0E] font-extrabold py-3.5 rounded-xl shadow-xl transition-all"
+            className="w-full bg-[#C6A15B] hover:bg-[#A88643] text-[#0B0B0B] font-extrabold py-3.5 rounded-xl shadow-xl transition-all"
           >
             অর্ডার কনফার্ম করুন
           </button>
@@ -1899,8 +1899,8 @@ function OrderSuccessPage() {
       </div>
 
       <div className="space-y-2">
-        <h2 className="text-3xl font-extrabold text-[#F8FAFC]">আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে!</h2>
-        <p className="text-xs text-[#CBD5E1]">
+        <h2 className="text-3xl font-extrabold text-[#171717]">আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে!</h2>
+        <p className="text-xs text-[#55514A]">
           আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে কল করে অর্ডারটি নিশ্চিত করবেন।
         </p>
       </div>
@@ -1908,13 +1908,13 @@ function OrderSuccessPage() {
       <div className="pt-4 flex justify-center gap-4">
         <button
           onClick={() => navigateTo('/')}
-          className="bg-[#FFC928] text-[#050B0E] font-bold px-6 py-3 rounded-xl text-xs"
+          className="bg-[#C6A15B] text-[#0B0B0B] font-bold px-6 py-3 rounded-xl text-xs"
         >
           হোমপেজে ফিরে যান
         </button>
         <button
           onClick={() => navigateTo('/track-order')}
-          className="bg-[#172126] border border-[#38434A] text-white font-semibold px-6 py-3 rounded-xl text-xs"
+          className="bg-[#EEEAE1] border border-[#E2DCCF] text-white font-semibold px-6 py-3 rounded-xl text-xs"
         >
           অর্ডার ট্র্যাক করুন
         </button>
@@ -1943,7 +1943,7 @@ function TrackOrderPage() {
     <div className="max-w-3xl mx-auto px-4 py-12 space-y-8">
       <div className="text-center space-y-2">
         <h2 className="text-2xl font-extrabold gold-gradient-text">অর্ডার ট্র্যাক করুন</h2>
-        <p className="text-xs text-[#94A3B8]">আপনার অর্ডার আইডি দিয়ে বর্তমান ডেলিভারি স্ট্যাটাস চেক করুন</p>
+        <p className="text-xs text-[#777168]">আপনার অর্ডার আইডি দিয়ে বর্তমান ডেলিভারি স্ট্যাটাস চেক করুন</p>
       </div>
 
       <form onSubmit={handleTrack} className="flex gap-2 max-w-md mx-auto">
@@ -1952,35 +1952,35 @@ function TrackOrderPage() {
           placeholder="যেমন: NVX-98234"
           value={searchId}
           onChange={(e) => setSearchId(e.target.value)}
-          className="flex-1 bg-[#10191D] border border-[#38434A] rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-[#FFC928]"
+          className="flex-1 bg-[#FFFFFF] border border-[#E2DCCF] rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-[#C6A15B]"
         />
-        <button type="submit" className="bg-[#FFC928] text-[#050B0E] font-bold px-6 py-3 rounded-xl text-xs">
+        <button type="submit" className="bg-[#C6A15B] text-[#0B0B0B] font-bold px-6 py-3 rounded-xl text-xs">
           খুঁজুন
         </button>
       </form>
 
       {searched && foundOrder && (
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-6 space-y-6">
-          <div className="flex justify-between items-center border-b border-[#38434A] pb-4">
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-6 space-y-6">
+          <div className="flex justify-between items-center border-b border-[#E2DCCF] pb-4">
             <div>
-              <h4 className="font-extrabold text-sm text-[#FFC928]">অর্ডার নম্বর: {foundOrder.id}</h4>
-              <p className="text-[10px] text-[#94A3B8]">তারিখ: {foundOrder.date}</p>
+              <h4 className="font-extrabold text-sm text-[#C6A15B]">অর্ডার নম্বর: {foundOrder.id}</h4>
+              <p className="text-[10px] text-[#777168]">তারিখ: {foundOrder.date}</p>
             </div>
-            <span className="bg-[#FFC928]/20 text-[#FFC928] text-xs font-bold px-3 py-1 rounded-full uppercase">
+            <span className="bg-[#C6A15B]/20 text-[#C6A15B] text-xs font-bold px-3 py-1 rounded-full uppercase">
               {foundOrder.status}
             </span>
           </div>
 
           <div className="space-y-2">
-            <p className="text-xs text-[#CBD5E1]">গ্রাহক: {foundOrder.customerName}</p>
-            <p className="text-xs text-[#CBD5E1]">ঠিকানা: {foundOrder.address}</p>
-            <p className="text-xs font-bold text-[#FFC928]">মোট মূল্য: ৳{foundOrder.total}</p>
+            <p className="text-xs text-[#55514A]">গ্রাহক: {foundOrder.customerName}</p>
+            <p className="text-xs text-[#55514A]">ঠিকানা: {foundOrder.address}</p>
+            <p className="text-xs font-bold text-[#C6A15B]">মোট মূল্য: ৳{foundOrder.total}</p>
           </div>
         </div>
       )}
 
       {searched && !foundOrder && (
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-8 text-center text-xs text-[#94A3B8]">
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-8 text-center text-xs text-[#777168]">
           এই আইডির সাথে মিল রেখে কোন অর্ডার পাওয়া যায়নি।
         </div>
       )}
@@ -1999,9 +1999,9 @@ function WishlistPage() {
       <h2 className="text-2xl font-extrabold gold-gradient-text">আমার উইশলিস্ট ({wishlist.length})</h2>
 
       {wishlist.length === 0 ? (
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl p-12 text-center space-y-3">
-          <Heart className="w-10 h-10 text-[#38434A] mx-auto" />
-          <p className="text-xs text-[#94A3B8]">উইশলিস্টে কোন পছন্দসই পণ্য যুক্ত নেই</p>
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl p-12 text-center space-y-3">
+          <Heart className="w-10 h-10 text-[#E2DCCF] mx-auto" />
+          <p className="text-xs text-[#777168]">উইশলিস্টে কোন পছন্দসই পণ্য যুক্ত নেই</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -2067,28 +2067,28 @@ function AdminDashboardPage() {
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-6">
       
       {/* Dashboard Top Header */}
-      <div className="flex justify-between items-center bg-[#10191D] border border-[#38434A] p-6 rounded-2xl">
+      <div className="flex justify-between items-center bg-[#FFFFFF] border border-[#E2DCCF] p-6 rounded-2xl">
         <div>
           <h2 className="text-xl font-extrabold gold-gradient-text flex items-center gap-2">
-            <LayoutDashboard className="w-5 h-5 text-[#FFC928]" /> এডমিন কন্ট্রোল প্যানেল
+            <LayoutDashboard className="w-5 h-5 text-[#C6A15B]" /> এডমিন কন্ট্রোল প্যানেল
           </h2>
-          <p className="text-xs text-[#94A3B8]">স্টোরের পণ্য, স্টক ও অর্ডার পরিচালনা করুন</p>
+          <p className="text-xs text-[#777168]">স্টোরের পণ্য, স্টক ও অর্ডার পরিচালনা করুন</p>
         </div>
 
         <button
           onClick={() => setShowAddModal(true)}
-          className="bg-[#FFC928] text-[#050B0E] font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2"
+          className="bg-[#C6A15B] text-[#0B0B0B] font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2"
         >
           <PlusCircle className="w-4 h-4" /> নতুন পণ্য যোগ করুন
         </button>
       </div>
 
       {/* Admin Tabs Bar */}
-      <div className="flex gap-2 border-b border-[#38434A]">
+      <div className="flex gap-2 border-b border-[#E2DCCF]">
         <button
           onClick={() => setActiveTab('products')}
           className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-all ${
-            activeTab === 'products' ? 'border-[#FFC928] text-[#FFC928]' : 'border-transparent text-[#94A3B8]'
+            activeTab === 'products' ? 'border-[#C6A15B] text-[#C6A15B]' : 'border-transparent text-[#777168]'
           }`}
         >
           পণ্য তালিকা ({products.length})
@@ -2096,7 +2096,7 @@ function AdminDashboardPage() {
         <button
           onClick={() => setActiveTab('orders')}
           className={`px-4 py-2.5 text-xs font-bold border-b-2 transition-all ${
-            activeTab === 'orders' ? 'border-[#FFC928] text-[#FFC928]' : 'border-transparent text-[#94A3B8]'
+            activeTab === 'orders' ? 'border-[#C6A15B] text-[#C6A15B]' : 'border-transparent text-[#777168]'
           }`}
         >
           অর্ডার সমূহ ({orders.length})
@@ -2105,9 +2105,9 @@ function AdminDashboardPage() {
 
       {/* Tab Content: Products Table */}
       {activeTab === 'products' && (
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl overflow-x-auto">
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#172126] text-[#CBD5E1] border-b border-[#38434A]">
+            <thead className="bg-[#EEEAE1] text-[#55514A] border-b border-[#E2DCCF]">
               <tr>
                 <th className="p-3">ছবি</th>
                 <th className="p-3">নাম</th>
@@ -2117,15 +2117,15 @@ function AdminDashboardPage() {
                 <th className="p-3">অ্যাকশন</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#38434A]/50">
+            <tbody className="divide-y divide-[#E2DCCF]/50">
               {products.map((prod) => (
-                <tr key={prod.id} className="hover:bg-[#172126]/50">
+                <tr key={prod.id} className="hover:bg-[#EEEAE1]/50">
                   <td className="p-3">
                     <img src={prod.image} alt="" className="w-10 h-10 object-cover rounded-lg" />
                   </td>
-                  <td className="p-3 font-semibold text-[#F8FAFC]">{prod.name}</td>
-                  <td className="p-3 text-[#94A3B8]">{prod.categoryName}</td>
-                  <td className="p-3 font-bold text-[#FFC928]">৳{prod.price}</td>
+                  <td className="p-3 font-semibold text-[#171717]">{prod.name}</td>
+                  <td className="p-3 text-[#777168]">{prod.categoryName}</td>
+                  <td className="p-3 font-bold text-[#C6A15B]">৳{prod.price}</td>
                   <td className="p-3">{prod.stock} টি</td>
                   <td className="p-3">
                     <button
@@ -2144,9 +2144,9 @@ function AdminDashboardPage() {
 
       {/* Tab Content: Orders Table */}
       {activeTab === 'orders' && (
-        <div className="bg-[#10191D] border border-[#38434A] rounded-2xl overflow-x-auto">
+        <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-2xl overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#172126] text-[#CBD5E1] border-b border-[#38434A]">
+            <thead className="bg-[#EEEAE1] text-[#55514A] border-b border-[#E2DCCF]">
               <tr>
                 <th className="p-3">আইডি</th>
                 <th className="p-3">গ্রাহক</th>
@@ -2156,15 +2156,15 @@ function AdminDashboardPage() {
                 <th className="p-3">পরিবর্তন</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#38434A]/50">
+            <tbody className="divide-y divide-[#E2DCCF]/50">
               {orders.map((ord) => (
                 <tr key={ord.id}>
-                  <td className="p-3 font-bold text-[#FFC928]">{ord.id}</td>
+                  <td className="p-3 font-bold text-[#C6A15B]">{ord.id}</td>
                   <td className="p-3">{ord.customerName} ({ord.phone})</td>
-                  <td className="p-3 text-[#94A3B8]">{ord.address}</td>
+                  <td className="p-3 text-[#777168]">{ord.address}</td>
                   <td className="p-3 font-bold">৳{ord.total}</td>
                   <td className="p-3">
-                    <span className="bg-[#FFC928]/20 text-[#FFC928] px-2 py-0.5 rounded text-[10px] font-bold">
+                    <span className="bg-[#C6A15B]/20 text-[#C6A15B] px-2 py-0.5 rounded text-[10px] font-bold">
                       {ord.status}
                     </span>
                   </td>
@@ -2172,7 +2172,7 @@ function AdminDashboardPage() {
                     <select
                       value={ord.status}
                       onChange={(e) => updateOrderStatus(ord.id, e.target.value)}
-                      className="bg-[#172126] text-white border border-[#38434A] rounded p-1 text-[10px]"
+                      className="bg-[#EEEAE1] text-white border border-[#E2DCCF] rounded p-1 text-[10px]"
                     >
                       <option value="pending">Pending</option>
                       <option value="shipped">Shipped</option>
@@ -2189,8 +2189,8 @@ function AdminDashboardPage() {
       {/* Add Product Modal */}
       {showAddModal && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <form onSubmit={handleAddProduct} className="bg-[#10191D] border border-[#38434A] rounded-3xl p-6 w-full max-w-lg space-y-4">
-            <h3 className="font-extrabold text-base text-[#FFC928]">নতুন প্রোডাক্ট অ্যাড করুন</h3>
+          <form onSubmit={handleAddProduct} className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-3xl p-6 w-full max-w-lg space-y-4">
+            <h3 className="font-extrabold text-base text-[#C6A15B]">নতুন প্রোডাক্ট অ্যাড করুন</h3>
 
             <input
               type="text"
@@ -2198,7 +2198,7 @@ function AdminDashboardPage() {
               placeholder="পণ্যের নাম"
               value={newProd.name}
               onChange={(e) => setNewProd({ ...newProd, name: e.target.value })}
-              className="w-full bg-[#172126] border border-[#38434A] rounded-xl p-2.5 text-xs"
+              className="w-full bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-2.5 text-xs"
             />
 
             <div className="grid grid-cols-2 gap-3">
@@ -2208,14 +2208,14 @@ function AdminDashboardPage() {
                 placeholder="বিক্রয় মূল্য"
                 value={newProd.price}
                 onChange={(e) => setNewProd({ ...newProd, price: e.target.value })}
-                className="bg-[#172126] border border-[#38434A] rounded-xl p-2.5 text-xs"
+                className="bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-2.5 text-xs"
               />
               <input
                 type="number"
                 placeholder="আসল মূল্য"
                 value={newProd.originalPrice}
                 onChange={(e) => setNewProd({ ...newProd, originalPrice: e.target.value })}
-                className="bg-[#172126] border border-[#38434A] rounded-xl p-2.5 text-xs"
+                className="bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-2.5 text-xs"
               />
             </div>
 
@@ -2225,14 +2225,14 @@ function AdminDashboardPage() {
               placeholder="স্টক পরিমাণ"
               value={newProd.stock}
               onChange={(e) => setNewProd({ ...newProd, stock: e.target.value })}
-              className="w-full bg-[#172126] border border-[#38434A] rounded-xl p-2.5 text-xs"
+              className="w-full bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-2.5 text-xs"
             />
 
             <div className="flex gap-2 pt-2">
-              <button type="submit" className="flex-1 bg-[#FFC928] text-[#050B0E] font-bold py-2.5 rounded-xl text-xs">
+              <button type="submit" className="flex-1 bg-[#C6A15B] text-[#0B0B0B] font-bold py-2.5 rounded-xl text-xs">
                 সংরক্ষণ করুন
               </button>
-              <button onClick={() => setShowAddModal(false)} type="button" className="px-4 bg-[#172126] border border-[#38434A] text-xs">
+              <button onClick={() => setShowAddModal(false)} type="button" className="px-4 bg-[#EEEAE1] border border-[#E2DCCF] text-xs">
                 বাতিল
               </button>
             </div>
@@ -2249,11 +2249,11 @@ function LoginPage() {
 
   return (
     <div className="max-w-md mx-auto px-4 py-16 space-y-6">
-      <div className="bg-[#10191D] border border-[#38434A] rounded-3xl p-8 space-y-6 text-center">
+      <div className="bg-[#FFFFFF] border border-[#E2DCCF] rounded-3xl p-8 space-y-6 text-center">
         <h2 className="text-xl font-extrabold gold-gradient-text">সাইন ইন / একাউন্ট</h2>
-        <input type="text" placeholder="মোবাইল নম্বর বা ইমেইল" className="w-full bg-[#172126] border border-[#38434A] rounded-xl p-3 text-xs" />
-        <input type="password" placeholder="পাসওয়ার্ড" className="w-full bg-[#172126] border border-[#38434A] rounded-xl p-3 text-xs" />
-        <button onClick={() => navigateTo('/')} className="w-full bg-[#FFC928] text-[#050B0E] font-bold py-3 rounded-xl text-xs">
+        <input type="text" placeholder="মোবাইল নম্বর বা ইমেইল" className="w-full bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-3 text-xs" />
+        <input type="password" placeholder="পাসওয়ার্ড" className="w-full bg-[#EEEAE1] border border-[#E2DCCF] rounded-xl p-3 text-xs" />
+        <button onClick={() => navigateTo('/')} className="w-full bg-[#C6A15B] text-[#0B0B0B] font-bold py-3 rounded-xl text-xs">
           লগইন করুন
         </button>
       </div>
@@ -2265,7 +2265,7 @@ function PolicyPage({ title }) {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12 space-y-4">
       <h2 className="text-2xl font-extrabold gold-gradient-text">{title}</h2>
-      <p className="text-xs text-[#CBD5E1] leading-relaxed">
+      <p className="text-xs text-[#55514A] leading-relaxed">
         HASIB MART তে কেনাকাটা করার জন্য ধন্যবাদ। আমরা সারা বাংলাদেশে ক্যাশ অন ডেলিভারি সুবিধা প্রদান করি। ঢাকার ভেতরে ২৪-৪৮ ঘণ্টার মধ্যে এবং ঢাকার বাইরে ২-৪ দিনের মধ্যে হোম ডেলিভারি দেওয়া হয়।
       </p>
     </div>
@@ -2279,52 +2279,52 @@ function Footer() {
   const { navigateTo } = useShop();
 
   return (
-    <footer className="bg-[#0A1115] border-t border-[#38434A] pt-12 pb-20 md:pb-12 text-xs text-[#CBD5E1]">
+    <footer className="bg-[#0A1115] border-t border-[#E2DCCF] pt-12 pb-20 md:pb-12 text-xs text-[#55514A]">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Brand Info */}
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#FFC928] flex items-center justify-center text-[#050B0E]">
+            <div className="w-9 h-9 rounded-xl bg-[#C6A15B] flex items-center justify-center text-[#0B0B0B]">
               <ShoppingBag className="w-5 h-5 stroke-[2.5]" />
             </div>
-            <h3 className="font-extrabold text-base text-[#FFC928]">HASIB MART</h3>
+            <h3 className="font-extrabold text-base text-[#C6A15B]">HASIB MART</h3>
           </div>
-          <p className="text-[11px] text-[#94A3B8] leading-relaxed">
+          <p className="text-[11px] text-[#777168] leading-relaxed">
             আপনার বিশ্বস্ত অনলাইন শপিং গন্তব্য। প্রিমিয়াম কোয়ালিটির পোশাক, জুতা, গ্যাজেট ও হোম এপ্ল্যায়েন্স।
           </p>
         </div>
 
         {/* Quick Links */}
         <div className="space-y-3">
-          <h4 className="font-bold text-sm text-[#F8FAFC]">গুরুত্বপূর্ণ লিংক</h4>
-          <ul className="space-y-2 text-[#CBD5E1]">
-            <li><button onClick={() => navigateTo('/shop')} className="hover:text-[#FFC928]">সব প্রোডাক্ট</button></li>
-            <li><button onClick={() => navigateTo('/track-order')} className="hover:text-[#FFC928]">অর্ডার ট্র্যাকিং</button></li>
-            <li><button onClick={() => navigateTo('/shipping-policy')} className="hover:text-[#FFC928]">ডেলিভারি পলিসি</button></li>
-            <li><button onClick={() => navigateTo('/return-policy')} className="hover:text-[#FFC928]">রিটার্ন নীতি</button></li>
+          <h4 className="font-bold text-sm text-[#171717]">গুরুত্বপূর্ণ লিংক</h4>
+          <ul className="space-y-2 text-[#55514A]">
+            <li><button onClick={() => navigateTo('/shop')} className="hover:text-[#C6A15B]">সব প্রোডাক্ট</button></li>
+            <li><button onClick={() => navigateTo('/track-order')} className="hover:text-[#C6A15B]">অর্ডার ট্র্যাকিং</button></li>
+            <li><button onClick={() => navigateTo('/shipping-policy')} className="hover:text-[#C6A15B]">ডেলিভারি পলিসি</button></li>
+            <li><button onClick={() => navigateTo('/return-policy')} className="hover:text-[#C6A15B]">রিটার্ন নীতি</button></li>
           </ul>
         </div>
 
         {/* Customer Care */}
         <div className="space-y-3">
-          <h4 className="font-bold text-sm text-[#F8FAFC]">যোগাযোগ</h4>
-          <p className="text-[#94A3B8]">হটলাইন: +880 1700-000000</p>
-          <p className="text-[#94A3B8]">ইমেইল: support@আপনার-ইমেইল-এখানে-দিন</p>
-          <p className="text-[#94A3B8]">মিরপুর, ঢাকা - ১২১৬, বাংলাদেশ</p>
+          <h4 className="font-bold text-sm text-[#171717]">যোগাযোগ</h4>
+          <p className="text-[#777168]">হটলাইন: +880 1700-000000</p>
+          <p className="text-[#777168]">ইমেইল: support@আপনার-ইমেইল-এখানে-দিন</p>
+          <p className="text-[#777168]">মিরপুর, ঢাকা - ১২১৬, বাংলাদেশ</p>
         </div>
 
         {/* Guaranteed Services */}
         <div className="space-y-3">
-          <h4 className="font-bold text-sm text-[#F8FAFC]">নিরাপদ পেমেন্ট</h4>
-          <p className="text-[11px] text-[#94A3B8]">
+          <h4 className="font-bold text-sm text-[#171717]">নিরাপদ পেমেন্ট</h4>
+          <p className="text-[11px] text-[#777168]">
             ক্যাশ অন ডেলিভারি, বিকাশ ও নগদের মাধ্যমে নিরাপদ মূল্য পরিশোধের সুবিধা।
           </p>
         </div>
 
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-[#38434A]/50 text-center text-[11px] text-[#94A3B8]">
+      <div className="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-[#E2DCCF]/50 text-center text-[11px] text-[#777168]">
         © ২০২৬ HASIB MART - সর্বস্বত্ব সংরক্ষিত।
       </div>
     </footer>
@@ -2337,18 +2337,18 @@ function MobileBottomNav() {
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#0A1115] border-t border-[#38434A] py-2 px-4 z-40 flex justify-between items-center text-[10px]">
-      <button onClick={() => navigateTo('/')} className={`flex flex-col items-center gap-1 ${currentPath === '/' ? 'text-[#FFC928]' : 'text-[#94A3B8]'}`}>
+    <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#0A1115] border-t border-[#E2DCCF] py-2 px-4 z-40 flex justify-between items-center text-[10px]">
+      <button onClick={() => navigateTo('/')} className={`flex flex-col items-center gap-1 ${currentPath === '/' ? 'text-[#C6A15B]' : 'text-[#777168]'}`}>
         <ShoppingBag className="w-5 h-5" />
         <span>হোম</span>
       </button>
 
-      <button onClick={() => navigateTo('/shop')} className={`flex flex-col items-center gap-1 ${currentPath === '/shop' ? 'text-[#FFC928]' : 'text-[#94A3B8]'}`}>
+      <button onClick={() => navigateTo('/shop')} className={`flex flex-col items-center gap-1 ${currentPath === '/shop' ? 'text-[#C6A15B]' : 'text-[#777168]'}`}>
         <Search className="w-5 h-5" />
         <span>শপ</span>
       </button>
 
-      <button onClick={() => setIsCartOpen(true)} className="flex flex-col items-center gap-1 text-[#94A3B8] relative">
+      <button onClick={() => setIsCartOpen(true)} className="flex flex-col items-center gap-1 text-[#777168] relative">
         <ShoppingCart className="w-5 h-5" />
         {cartCount > 0 && (
           <span className="absolute -top-1 right-2 bg-[#EF3038] text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">
@@ -2358,12 +2358,12 @@ function MobileBottomNav() {
         <span>কার্ট</span>
       </button>
 
-      <button onClick={() => navigateTo('/wishlist')} className={`flex flex-col items-center gap-1 ${currentPath === '/wishlist' ? 'text-[#FFC928]' : 'text-[#94A3B8]'}`}>
+      <button onClick={() => navigateTo('/wishlist')} className={`flex flex-col items-center gap-1 ${currentPath === '/wishlist' ? 'text-[#C6A15B]' : 'text-[#777168]'}`}>
         <Heart className="w-5 h-5" />
         <span>উইশলিস্ট</span>
       </button>
 
-      <button onClick={() => navigateTo('/admin')} className={`flex flex-col items-center gap-1 ${currentPath === '/admin' ? 'text-[#FFC928]' : 'text-[#94A3B8]'}`}>
+      <button onClick={() => navigateTo('/admin')} className={`flex flex-col items-center gap-1 ${currentPath === '/admin' ? 'text-[#C6A15B]' : 'text-[#777168]'}`}>
         <User className="w-5 h-5" />
         <span>এডমিন</span>
       </button>
